@@ -9,6 +9,14 @@ import (
 
 type tickMsg time.Time
 
+type Time struct {
+	ID int64
+	Name string
+	Minutes uint
+	totalSeconds uint
+	elapsedSeconds uint
+}
+
 const (
 	welcomeView                = 0
 	StudyTimeSelectorView uint = 1
@@ -51,7 +59,7 @@ type model struct {
 	currBreakTime     Time
 }
 
-func NewModel(store *Store) model {
+func NewModel() model {
 	return model{
 		breakTimes:        breakTimes,
 		studyTimes:        studyTimes,
